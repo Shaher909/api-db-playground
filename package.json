@@ -1,0 +1,19 @@
+{
+  "name": "api-db-playground",
+  "version": "1.0.0",
+  "description": "This repository contains a simple API and a database setup for testing and learning purposes. It includes a basic Express server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shaher909/api-db-playground.git"
+  },
+  "author": "Shaher Jamal Eddin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shaher909/api-db-playground/issues"
+  },
+  "homepage": "https://github.com/Shaher909/api-db-playground#readme"
+}
