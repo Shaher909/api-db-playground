@@ -1,7 +1,7 @@
-- create a container [x]
+- create a postgres container [x]
 - create a user [x]
 - create a database [x]
-- include db-migrate [x]
+- install db-migrate [x]
 - create .env file [x] (use the vars names in advance that matches the need of `database.ts`file)
 - create database.json file [x]
 - connect to the DB using node application [x]
