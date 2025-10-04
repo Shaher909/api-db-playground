@@ -1,14 +1,14 @@
 {
   "dev": {
     "driver": "pg",
-    "host": "127.0.0.1",
-    "database": { "ENV": "DB_NAME" },
-    "user": { "ENV": "POSTGRES_DB_USER" },
-    "password": { "ENV": "POSTGRES_DB_USER_PASSWORD" }
+    "host": { "ENV": "POSTGRES_HOST" },
+    "database": { "ENV": "POSTGRES_DB" },
+    "user": { "ENV": "POSTGRES_USER" },
+    "password": { "ENV": "POSTGRES_PASSWORD" }
   },
   "test": {
     "driver": "pg",
-    "host": "127.0.0.1",
+    "host": { "ENV": "POSTGRES_HOST" },
     "database": { "ENV": "DB_NAME" },
     "user": { "ENV": "POSTGRES_DB_USER" },
     "password": { "ENV": "POSTGRES_DB_USER_PASSWORD" }

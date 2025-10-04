@@ -1,6 +1,7 @@
 {
   "name": "api-db-playground",
   "version": "1.0.0",
+  "type": "module",
   "description": "This repository contains a simple API and a database setup for testing and learning purposes. It includes a basic Express server",
   "main": "index.js",
   "scripts": {
@@ -8,7 +9,8 @@
     "migrate:up": "db-migrate up",
     "migrate:down": "db-migrate down",
     "migrate:up:verbose": "db-migrate up --verbose",
-    "build": "npx tsc"
+    "build": "npx tsc",
+    "start": "node dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -24,10 +26,13 @@
     "bcrypt": "^6.0.0",
     "db-migrate": "^0.11.14",
     "db-migrate-pg": "^1.5.2",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "pg": "^8.16.3",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/express": "^5.0.3"
+    "@types/express": "^5.0.3",
+    "@types/pg": "^8.15.5"
   }
 }
