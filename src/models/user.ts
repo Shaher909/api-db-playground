@@ -23,7 +23,7 @@ export class UserStore {
     // Implementation to add a user to the database
     try {
       const sql =
-        "INSERT INTO users (username, password) VALUES($1, $2) RETURNING *";
+        "INSERT INTO users (username, password_hash) VALUES($1, $2) RETURNING *";
 
       const conn = await client.connect();
 

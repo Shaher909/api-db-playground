@@ -16,8 +16,10 @@ const create = async (req: Request, res: Response) => {
     };
 
     const newUser = await store.create(user);
+    console.log("Created user:", newUser);
     res.json(newUser);
   } catch (err) {
+    console.error("Error in create handler:", err);
     res.status(400);
     res.json(err);
   }

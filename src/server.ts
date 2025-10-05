@@ -11,4 +11,9 @@ app.get("/home", (req, res) => {
   res.send("Hello world!, this is the start page of your API");
 });
 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url} - Body:`, req.body);
+  next();
+});
+
 userRoutes(app);
