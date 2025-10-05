@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { User, UserStore } from "../models/user.js";
+import bcrypt from "bcrypt";
 
 const store = new UserStore();
 
@@ -15,6 +16,15 @@ const create = async (req: Request, res: Response) => {
       password: req.body.password,
     };
 
+    const pepper = process.env.BCRYPT_PEPPER || "";
+    const saltRounds = process.env.SALT_ROUNDS || "10";
+
+    const password_hash = bcrypt.hashSync(
+      user.password + pepper,
+      parseInt(saltRounds)
+    );
+
+    user.password = password_hash;
     const newUser = await store.create(user);
     console.log("Created user:", newUser);
     res.json(newUser);
