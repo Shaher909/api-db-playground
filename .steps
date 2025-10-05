@@ -15,6 +15,6 @@
 - update the scripts to build, and run the server [x]
 - create a database connection file [x]
 - create a model for the user [x]
-- create a handler for the user [ ]
+- create a handler for the user [x]
 - add hashing to the create user route [ ]
 - add authenticate route and use bycrypt to validate password [ ]
