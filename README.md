@@ -33,7 +33,7 @@ npm run start
 
 `/users`- get all the users
 
-`/users/authenticate`- authenticate a user with username and password
+`/users/authenticate`- authenticate a user with username and password (after decrypting the password with bcrypt)
 -- in order to simulate a request for authentication, use curl:
 
 ```
