@@ -31,3 +31,13 @@ npm run start
 
 `/home` - start point of the application
 `/users`- get all the users
+`/users/authenticate`- authenticate a user with username and password
+-- in order to simulate a request for authentication, use curl:
+
+```
+curl -X POST http://localhost:3000/users/authenticate \
+ -H "Content-Type: application/json" \
+ -d '{"username": "username", "password": "pass"}'
+```
+
+if the authenticattion is successful, you'll see the the following in the server logs: "password matched". While you'd get "no user found or password did not match" if the authentication fails.

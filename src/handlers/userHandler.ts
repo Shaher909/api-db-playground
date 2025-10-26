@@ -35,9 +35,27 @@ const create = async (req: Request, res: Response) => {
   }
 };
 
+const authenticate = async (req: Request, res: Response) => {
+  try {
+    const { username, password } = req.body;
+    const user = await store.authenticate(username, password);
+    if (user) {
+      res.json({ success: true, user });
+    } else {
+      res
+        .status(401)
+        .json({ success: false, message: "Authentication failed" });
+    }
+  } catch (err) {
+    console.error("Error in authenticate handler:", err);
+    res.status(400).json({ success: false, error: err });
+  }
+};
+
 const userRoutes = (app: express.Application) => {
   app.get("/users", index);
   app.post("/users", create);
+  app.post("/users/authenticate", authenticate);
 };
 
 export default userRoutes;

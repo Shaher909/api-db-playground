@@ -1,4 +1,5 @@
 import client from "../database.js";
+import bcrypt from "bcrypt";
 
 export type User = {
   id?: Number;
@@ -37,5 +38,25 @@ export class UserStore {
     } catch (err) {
       throw new Error(`Could not add new user ${user.username}. Error: ${err}`);
     }
+  }
+
+  async authenticate(username: string, password: string): Promise<User | null> {
+    const conn = await client.connect();
+    const pepper = process.env.BCRYPT_PEPPER || "";
+    const sql = "SELECT password_hash FROM users WHERE username =($1)";
+
+    const result = await conn.query(sql, [username]);
+
+    console.log(password + pepper);
+    if (result.rows.length) {
+      const user = result.rows[0];
+      console.log(user);
+      if (bcrypt.compareSync(password + pepper, user.password_hash)) {
+        console.log("password matched");
+        return user;
+      }
+    }
+    console.log("no user found or password did not match");
+    return null;
   }
 }
