@@ -30,7 +30,9 @@ npm run start
 ## End points
 
 `/home` - start point of the application
+
 `/users`- get all the users
+
 `/users/authenticate`- authenticate a user with username and password
 -- in order to simulate a request for authentication, use curl:
 
