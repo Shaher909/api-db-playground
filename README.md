@@ -5,7 +5,9 @@ This repository contains a simple API and a database setup for testing and learn
 ## Installation and setup
 
 1- Start your docker with postgress database
+
 2- Perform the migration to create the user table
+
 -- to create some users, use curl to do a POST request:
 
 ```
@@ -15,6 +17,7 @@ curl -X POST http://localhost:3000/users \
 ```
 
 3- Install dependencies `npm install`
+
 4- Build the application
 
 ```
